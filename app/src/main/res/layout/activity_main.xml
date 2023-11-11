@@ -1,83 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/question"
-        android:layout_width="241dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="128dp"
-        android:text="Question"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ans1"
-        android:layout_width="165dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:onClick="onClick"
-        android:text="Answer 1"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ans2" />
-
-    <Button
-        android:id="@+id/ans2"
-        android:layout_width="165dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:onClick="onClick"
-        android:text="Answer 2"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ans3" />
-
-    <Button
-        android:id="@+id/ans3"
-        android:layout_width="165dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:onClick="onClick"
-        android:text="Answer 3"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ans4" />
-
-    <Button
-        android:id="@+id/ans4"
-        android:layout_width="165dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        android:onClick="onClick"
-        android:text="Answer 4"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question" />
-
-    <Button
-        android:id="@+id/enter"
+        android:id="@+id/total_questions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:onClick="onClick"
-        android:text="Enter"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ans1" />
+        android:layout_centerHorizontal="true"
+        android:text="Total Question"
+        android:textSize="30dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/choices_layout"
+        android:layout_centerHorizontal="true"
+        android:text="Here will be question"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/choices_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ans_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="A"
+            android:textColor="@color/black"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/ans_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="B"
+            android:textColor="@color/black"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/ans_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="C"
+            android:textColor="@color/black"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/ans_d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="50dp"></Button>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choices_layout"
+        android:layout_margin="10dp"
+        android:text="Ok"
+        android:textColor="@color/black"
+        android:textSize="50dp"></Button>
+
+</RelativeLayout>
